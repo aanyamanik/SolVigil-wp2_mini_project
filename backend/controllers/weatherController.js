@@ -126,7 +126,7 @@ export async function searchLocations(req, res, next) {
  * Get current weather and hourly forecast for a city
  * GET /api/weather?city=Mumbai
  */
-export async function getWeather(req, res, next) {
+export async function getWeather(req, res, _next) {
   try {
     const cityName = req.query.city || "Mumbai";
     const loc = await resolveLocation(cityName);
@@ -247,7 +247,7 @@ export async function getWeather(req, res, next) {
  * Get 7-day daily forecast for a city
  * GET /api/forecast?city=Mumbai
  */
-export async function getForecast(req, res, next) {
+export async function getForecast(req, res, _next) {
   try {
     const cityName = req.query.city || "Mumbai";
     const loc = await resolveLocation(cityName);

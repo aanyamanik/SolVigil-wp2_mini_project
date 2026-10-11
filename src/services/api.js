@@ -47,9 +47,6 @@ export function searchCities(query = "") {
   return request(`/weather/search?q=${encodeURIComponent(query)}`);
 }
 
-export function fetchHeatMap() {
-  return request(`/heatmap`);
-}
 
 export function fetchAdvisory(risk = "Moderate", role = "all") {
   return request(`/advisory?risk=${encodeURIComponent(risk)}&role=${encodeURIComponent(role)}`);

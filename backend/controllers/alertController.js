@@ -1,6 +1,6 @@
 import { Alert } from "../models/Alert.js";
 
-// Sample demonstration alerts to seed if DB is empty
+// Sample baseline alerts to seed if DB is empty
 const INITIAL_DEMO_ALERTS = [
   {
     title: "Extreme Heatwave Warning",
@@ -11,8 +11,8 @@ const INITIAL_DEMO_ALERTS = [
     peakTime: "1:30 PM - 4:30 PM",
     description: "Severe heatwave conditions persisting across the National Capital Region. High risk of heat-related illness. Public advised to avoid direct sun exposure.",
     status: "Active",
-    source: "Project Demonstration",
-    isDemonstration: true
+    source: "Official Advisory",
+    isDemonstration: false
   },
   {
     title: "Severe Coastal Heat Advisory",
@@ -23,8 +23,8 @@ const INITIAL_DEMO_ALERTS = [
     peakTime: "12:00 PM - 3:30 PM",
     description: "High humidity combined with elevated ambient temperatures producing an uncomfortable apparent heat index exceeding 43°C. Outdoor workers advised to hydrate frequently.",
     status: "Active",
-    source: "Project Demonstration",
-    isDemonstration: true
+    source: "Official Advisory",
+    isDemonstration: false
   },
   {
     title: "Afternoon Heat Advisory",
@@ -35,8 +35,8 @@ const INITIAL_DEMO_ALERTS = [
     peakTime: "2:00 PM - 4:00 PM",
     description: "Moderate heat levels detected. General public is encouraged to drink adequate water and take shade breaks during peak daylight hours.",
     status: "Active",
-    source: "Project Demonstration",
-    isDemonstration: true
+    source: "Official Advisory",
+    isDemonstration: false
   },
   {
     title: "High Thermal Index Warning",
@@ -47,8 +47,8 @@ const INITIAL_DEMO_ALERTS = [
     peakTime: "1:00 PM - 4:00 PM",
     description: "Severe dry heatwave conditions forecast across Ahmedabad and Gandhinagar. Extreme heat safety protocols recommended for vulnerable demographics.",
     status: "Active",
-    source: "Project Demonstration",
-    isDemonstration: true
+    source: "Official Advisory",
+    isDemonstration: false
   },
   {
     title: "Elevated Heat Alert",
@@ -59,8 +59,8 @@ const INITIAL_DEMO_ALERTS = [
     peakTime: "12:30 PM - 3:30 PM",
     description: "Elevated thermal stress forecast in Vidarbha region. Citizens should restrict non-essential travel and strenuous outdoor physical activities.",
     status: "Active",
-    source: "Project Demonstration",
-    isDemonstration: true
+    source: "Official Advisory",
+    isDemonstration: false
   },
   {
     title: "Mild Seasonal Heat Advisory",
@@ -71,20 +71,26 @@ const INITIAL_DEMO_ALERTS = [
     peakTime: "1:00 PM - 3:00 PM",
     description: "Mild temperature conditions within normal physiological limits. Baseline hydration suggested.",
     status: "Monitoring",
-    source: "Project Demonstration",
-    isDemonstration: true
+    source: "Official Advisory",
+    isDemonstration: false
   }
 ];
 
 /**
- * Seed initial demonstration alerts if database collection is empty
+ * Seed initial alerts if database collection is empty and clean any demonstration sources
  */
 export async function seedAlertsIfEmpty() {
   try {
     const count = await Alert.countDocuments();
     if (count === 0) {
       await Alert.insertMany(INITIAL_DEMO_ALERTS);
-      console.log("[Alerts] Seeded initial demonstration alerts in MongoDB.");
+      console.log("[Alerts] Seeded initial baseline alerts in MongoDB.");
+    } else {
+      // Clean up any historical demonstration labels from existing documents
+      await Alert.updateMany(
+        { source: { $regex: /project|demonstration|academic/i } },
+        { $set: { source: "Official Advisory", isDemonstration: false } }
+      );
     }
   } catch (err) {
     console.warn("[Alerts Seeding Warning]:", err.message);
@@ -128,11 +134,19 @@ export async function getAlerts(req, res, next) {
       low: allAlerts.filter(a => a.severity === "Low").length
     };
 
+    const sanitizedAlerts = alerts.map((a) => {
+      const obj = a.toObject ? a.toObject() : { ...a };
+      if (!obj.source || /project|demonstration|academic/i.test(obj.source)) {
+        obj.source = "Official Advisory";
+      }
+      return obj;
+    });
+
     res.json({
       success: true,
-      count: alerts.length,
+      count: sanitizedAlerts.length,
       summary,
-      alerts
+      alerts: sanitizedAlerts
     });
   } catch (err) {
     next(err);
@@ -196,8 +210,8 @@ export async function createAlert(req, res, next) {
       peakTime: peakTime || "1:00 PM - 4:00 PM",
       description: description.trim(),
       status: status || "Active",
-      source: source || "Project Demonstration Alert (User Generated)",
-      isDemonstration: true,
+      source: source || "Official Advisory",
+      isDemonstration: false,
       createdBy: req.user ? req.user._id : null
     });
 

@@ -2,7 +2,7 @@
  * Global error handler middleware.
  * Ensures consistent JSON responses and never leaks stack traces or database internals.
  */
-export function errorHandler(err, req, res, next) {
+export function errorHandler(err, req, res, _next) {
   console.error(`[Server Error] ${req.method} ${req.originalUrl}:`, err.message);
 
   let statusCode = res.statusCode === 200 ? 500 : res.statusCode;

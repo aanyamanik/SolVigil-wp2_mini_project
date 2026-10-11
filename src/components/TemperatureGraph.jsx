@@ -71,9 +71,6 @@ function TemperatureGraph({ hourlyData = [] }) {
           <h2>Temperature Trend Trajectory</h2>
           <p>Hourly forecast temperature and heat-stress progression</p>
         </div>
-        <div className="graph-badge">
-          <span className="live-indicator">●</span> Future Forecast (Open-Meteo)
-        </div>
       </div>
 
       <div className="trend-graph-card">
@@ -218,7 +215,6 @@ function TemperatureGraph({ hourlyData = [] }) {
         </svg>
 
         <div className="graph-footer-note">
-          <span>* Hourly values reflect forecasted meteorological parameters from Open-Meteo.</span>
           <span>Hover or focus data points to inspect detailed thermal metrics.</span>
         </div>
       </div>

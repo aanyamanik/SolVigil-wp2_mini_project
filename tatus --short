@@ -1,0 +1,72 @@
+warning: in the working copy of '.gitignore', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.oxlintrc.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/.env.example', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/config/db.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/controllers/advisoryController.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/controllers/alertController.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/controllers/authController.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/controllers/weatherController.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/middleware/authMiddleware.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/middleware/errorHandler.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/models/Alert.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/models/Session.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/models/User.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/package-lock.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/package.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/routes/advisoryRoutes.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/routes/alertRoutes.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/routes/authRoutes.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/routes/weatherRoutes.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/server.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/utils/cryptoUtils.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/utils/heatRiskCalculator.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/utils/weatherCodes.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'index.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'package-lock.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'package.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'public/icons.svg', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/App.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/App.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/assets/vite.svg', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/components/AdvisoryCard.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/components/HeatAlert.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/components/HourlyForecast.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/components/LocationSearch.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/components/Navbar.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/components/TemperatureGraph.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/components/WeatherHighlights.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/context/AuthContext.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/context/LocationContext.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/index.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/main.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/pages/Alerts.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/pages/Forecast.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/pages/Home.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/pages/Login.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/pages/Register.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/services/api.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'vite.config.js', LF will be replaced by CRLF the next time Git touches it
+ README.md                                 |  148 [32m+[m[31m-[m
+ backend/controllers/advisoryController.js |  223 [32m++[m[31m-[m
+ backend/controllers/alertController.js    |   52 [32m+[m[31m-[m
+ backend/controllers/weatherController.js  |    4 [32m+[m[31m-[m
+ backend/middleware/errorHandler.js        |    2 [32m+[m[31m-[m
+ backend/models/Alert.js                   |    4 [32m+[m[31m-[m
+ package-lock.json                         | 1145 [32m++++++++++++++[m[31m-[m
+ package.json                              |   12 [32m+[m[31m-[m
+ src/App.css                               | 2231 [32m++++++++++++++++++[m[31m-----------[m
+ src/App.jsx                               |   47 [32m+[m[31m-[m
+ src/components/AdvisoryCard.jsx           |  264 [32m++[m[31m--[m
+ src/components/HeatAlert.jsx              |  128 [32m+[m[31m-[m
+ src/components/HourlyForecast.jsx         |   73 [32m+[m[31m-[m
+ src/components/Navbar.jsx                 |  125 [32m+[m[31m-[m
+ src/components/TemperatureGraph.jsx       |    4 [31m-[m
+ src/components/WeatherHighlights.jsx      |   98 [32m+[m[31m-[m
+ src/pages/Alerts.jsx                      |  527 [32m++++[m[31m---[m
+ src/pages/Forecast.jsx                    |  292 [32m++[m[31m--[m
+ src/pages/Home.jsx                        |  219 [32m++[m[31m-[m
+ src/pages/Login.jsx                       |  237 [32m++[m[31m-[m
+ src/pages/Register.jsx                    |  347 [32m++[m[31m---[m
+ src/services/api.js                       |    3 [31m-[m
+ 22 files changed, 4275 insertions(+), 1910 deletions(-)

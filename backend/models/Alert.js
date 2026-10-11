@@ -40,11 +40,11 @@ const alertSchema = new mongoose.Schema(
     },
     source: {
       type: String,
-      default: "Project Demonstration"
+      default: "Official Advisory"
     },
     isDemonstration: {
       type: Boolean,
-      default: true
+      default: false
     },
     createdBy: {
       type: mongoose.Schema.Types.ObjectId,
