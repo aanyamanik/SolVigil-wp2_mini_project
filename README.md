@@ -10,7 +10,7 @@ The platform combines real-time meteorological observations with a transparent, 
 
 - **Frontend**: React 19 (JSX) with native CSS
 - **Routing**: React Router DOM (v7)
-- **Data Visualization**: Native SVG (Temperature Trend Trajectory & Interactive India Regional Heat Map — strictly zero third-party charting/mapping libraries)
+- **Data Visualization**: Native SVG (Temperature Trend Trajectory — strictly zero third-party charting/mapping libraries)
 - **Backend**: Node.js & Express.js (ES Modules)
 - **Database**: MongoDB (Mongoose ODM) with fallback capability
 - **Meteorological Data**: Open-Meteo API (ambient temperature, apparent temperature/heat index, relative humidity, UV radiation, wind velocity)
