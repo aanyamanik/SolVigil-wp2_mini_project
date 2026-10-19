@@ -63,6 +63,14 @@ function Navbar() {
             >
               Heat Alerts
             </Link>
+
+            <Link
+              to="/custom-advisory"
+              className={isActive("/custom-advisory")}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Advisory Check
+            </Link>
           </div>
 
           <div className="nav-divider" aria-hidden="true"></div>

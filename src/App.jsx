@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Forecast from "./pages/Forecast";
 import Alerts from "./pages/Alerts";
+import CustomAdvisory from "./pages/CustomAdvisory";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 
@@ -22,6 +23,8 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/forecast" element={<Forecast />} />
               <Route path="/alerts" element={<Alerts />} />
+              <Route path="/custom-advisory" element={<CustomAdvisory />} />
+              <Route path="/advisory-check" element={<CustomAdvisory />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
             </Routes>
